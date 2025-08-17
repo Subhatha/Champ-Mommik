@@ -1,0 +1,113 @@
+/* ===== Body & Fonts ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+  overflow-x: hidden;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ===== Headings ===== */
+h1, h2 {
+  margin: 20px 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Countdown ===== */
+#countdown {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+}
+
+/* ===== Flower Button ===== */
+#flowerBtn {
+  margin: 20px;
+  padding: 14px 28px;
+  background: #ff4b5c;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background 0.2s;
+}
+
+#flowerBtn:hover {
+  background: #ff758f;
+  transform: scale(1.05);
+}
+
+/* ===== Flower Animation ===== */
+#flowerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* clicks pass through */
+  overflow: visible;
+  z-index: 10;
+}
+
+.flower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at 20% 20%, #ffb6c1, #ff69b4);
+  border-radius: 50%;
+  animation: floatUp 5s linear forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(200px) scale(0.5); opacity: 0.8; }
+  50% { transform: translateY(50px) scale(0.8); opacity: 0.9; }
+  100% { transform: translateY(-50px) scale(1); opacity: 0; }
+}
+
+/* ===== Canvas Styling ===== */
+#gameCanvas {
+  border: 4px solid #fff;
+  background: #4caf50;
+  margin-top: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Game Message ===== */
+#gameMessage {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-top: 10px;
+  min-height: 1.5em;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 700px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  #flowerBtn { padding: 10px 20px; font-size: 1rem; }
+  #gameCanvas { width: 90%; height: 300px; }
+}
