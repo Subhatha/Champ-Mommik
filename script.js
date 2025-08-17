@@ -17,13 +17,14 @@ flowerBtn.addEventListener('click', () => {
   }, 5000);
 });
 
-// ⏱ Animated Get Well Soon Countdown
+// ⏱ Persistent "Get Well Soon" Countdown
 const countdownEl = document.getElementById('countdown');
-const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 21); // 3 weeks
+
+// Set the target date for "Get Well Soon" (fixed date)
+const targetDate = new Date("2025-08-25T00:00:00").getTime(); // change to your desired date
 
 function updateCountdown() {
-  const now = new Date();
+  const now = new Date().getTime();
   const diff = targetDate - now;
 
   if (diff <= 0) {
@@ -36,7 +37,6 @@ function updateCountdown() {
   const minutes = Math.floor((diff / (1000*60)) % 60);
   const seconds = Math.floor((diff / 1000) % 60);
 
-  // Add cute animation effect
   countdownEl.innerHTML = `
     <span class="count">${days}d</span> 
     <span class="count">${hours}h</span> 
@@ -45,8 +45,10 @@ function updateCountdown() {
   `;
 }
 
+// Update every second
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
 
 // Add CSS animation class dynamically
 const style = document.createElement('style');
