@@ -21,7 +21,7 @@ flowerBtn.addEventListener('click', () => {
 const countdownEl = document.getElementById('countdown');
 
 // Set the target date for "Get Well Soon" (fixed date)
-const targetDate = new Date("2025-09-20T00:00:00").getTime(); // change to your desired date
+const targetDate = new Date("2025-09-08T00:00:00").getTime(); // change to your desired date
 
 function updateCountdown() {
   const now = new Date().getTime();
